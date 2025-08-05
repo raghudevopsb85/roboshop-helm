@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
   {{- template "app.metadata" . }}
 spec:
-  type: {{ .Values.service.type }
+  type: {{ .Values.service.type }}
   selector:
     {{- template "app.labels" . }}
   ports:
