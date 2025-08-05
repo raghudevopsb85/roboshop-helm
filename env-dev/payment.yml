@@ -1,4 +1,4 @@
-appName: frontend
+appName: payment
 configMapData:
   CART_HOST : "cart"
   CART_PORT : "8080"
