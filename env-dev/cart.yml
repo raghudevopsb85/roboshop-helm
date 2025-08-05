@@ -1,0 +1,10 @@
+appName: cart
+configMapData:
+  REDIS_HOST     : "redis-dev.rdevopsb85.online"
+  CATALOGUE_HOST : "catalogue"
+  CATALOGUE_PORT : "8080"
+
+service:
+  type: ClusterIP
+  port: 8080
+
