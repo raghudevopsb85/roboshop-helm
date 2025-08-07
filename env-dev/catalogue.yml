@@ -7,9 +7,11 @@ configMapData:
   DB_HOST     : "mongodb-dev.rdevopsb85.online"
   SCHEMA_FILE : "db/master-data.js"
 
+
 service:
   type: ClusterIP
   port: 8080
 
-
+schema:
+  enabled: true
 
