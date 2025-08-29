@@ -14,3 +14,9 @@ configMapData:
 service:
   port: 80
 
+
+ingress:
+  enabled: true
+  host: frontend-dev.rdevopsb85.online
+
+
