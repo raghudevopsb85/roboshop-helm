@@ -5,6 +5,9 @@ metadata:
   name: roboshop-{{ .Values.appName }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:739561048503:certificate/cb889901-6aad-4d52-ae3d-37429520d874"
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/target-type: "ip"
 spec:
   ingressClassName: nginx
   rules:
