@@ -6,6 +6,8 @@ metadata:
 spec:
   template:
     spec:
+      securityContext:
+        runAsUser: 1000
       containers:
       {{ range .Values.schema.jobs }}
       - name: {{ . | replace ".sql" "" | replace ".js" "" }}
