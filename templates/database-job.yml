@@ -9,7 +9,7 @@ spec:
       containers:
       {{ range .Values.schema.jobs }}
       - name: {{ . | replace ".sql" "" | replace ".js" "" }}
-        image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/shipping-schema:latest
+        image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}-schema:latest
         imagePullPolicy: Always
         securityContext:
           allowPrivilegeEscalation: false
