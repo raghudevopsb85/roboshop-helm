@@ -12,6 +12,7 @@ spec:
         image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
         securityContext:
           allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
         env:
           - name: SCHEMA_FILE
             value: "db/{{ . }}"
