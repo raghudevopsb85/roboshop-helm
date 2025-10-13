@@ -11,6 +11,8 @@ spec:
       labels:
 {{ include "app.labels" . | indent 8 }}
     spec:
+      securityContext:
+        runAsUser: 1000
       containers:
       - name: {{ .Values.appName }}
         image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}:{{ .Values.imageTag }}
@@ -36,7 +38,9 @@ spec:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
             memory: {{ .Values.resources.limits.memory }}
-
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
 
 
 
