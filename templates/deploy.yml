@@ -14,8 +14,8 @@ spec:
       volumes:
         - name: tmp
           emptyDir: {}
-      securityContext:
-        runAsUser: 1000
+#       securityContext:
+#         runAsUser: 1000
       containers:
       - name: {{ .Values.appName }}
         image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}:{{ .Values.imageTag }}
