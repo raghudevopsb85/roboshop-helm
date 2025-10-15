@@ -28,5 +28,5 @@ resources:
     cpu: 500m
     memory: 400Mi
 
-
+tmpDefault: /var/lib/nginx/tmp
 
