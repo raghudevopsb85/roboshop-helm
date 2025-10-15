@@ -11,11 +11,17 @@ spec:
       labels:
 {{ include "app.labels" . | indent 8 }}
     spec:
+      volumes:
+        - name: tmp
+          emptyDir: {}
       securityContext:
         runAsUser: 1000
       containers:
       - name: {{ .Values.appName }}
         image: 739561048503.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}:{{ .Values.imageTag }}
+        volumeMounts:
+          - name: tmp
+            mountPath: /var/lib/nginx/tmp
         envFrom:
         - secretRef:
             name: {{ .Values.appName }}
