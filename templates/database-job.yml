@@ -5,10 +5,10 @@ metadata:
   name: {{ .Values.appName }}-schema
 spec:
   template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
     spec:
-      metadata:
-        annotations:
-          sidecar.istio.io/inject: "false"
       securityContext:
         runAsUser: 1000
       containers:
