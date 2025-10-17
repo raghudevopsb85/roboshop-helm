@@ -1,0 +1,9 @@
+apiVersion: security.istio.io/v1
+kind: PeerAuthentication
+metadata:
+  name: ex1
+  namespace: example1
+spec:
+  mtls:
+    mode: PERMISSIVE
+
